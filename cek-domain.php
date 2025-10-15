@@ -8,10 +8,10 @@ $arr_domain = [
     ["https://kecoakganteng.com", "-986829134"],
     ["https://sorascreen.id", "-986829134"],
     ["https://soraview.id", "-986829134"],
-    ["https://kurir.baraya-paket.com", "-986829134"],
-    ["https://baraya-paket.com", "-986829134"],
-    ["https://hrd.id", "-986829134"],
-    ["https://logistic.stsa.co.id", "-986829134"],
+    ["https://kurir.baraya-paket.com", "-826370958"],
+    ["https://baraya-paket.com", "-826370958"],
+    ["https://hrd.id", "-716749503"],
+    ["https://logistic.stsa.co.id", "-972091450"],
 ];
 
 function curlPingWebsite($host)
