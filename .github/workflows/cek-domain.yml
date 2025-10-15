@@ -1,0 +1,31 @@
+name: Cek Domain Status
+
+on:
+  schedule:
+    - cron: "*/5 * * * *" # jalan tiap 5 menit
+  workflow_dispatch: # bisa manual dari tab Actions
+
+jobs:
+  cek-domain:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Jalankan script cek domain
+        run: php cek-domain.php
+
+      - name: Simpan log hasil
+        uses: actions/upload-artifact@v4
+        with:
+          name: log-cek-domain
+          path: log.txt
+
+    env:
+      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
