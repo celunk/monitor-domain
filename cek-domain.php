@@ -48,7 +48,7 @@ foreach ($arr_domain as $row) {
     $cek = curlPingWebsite($domain . $endPointCurlPing);
 
     if ($cek == false) {
-        $pesan = $domain . " Down (Tidak Dapat Diakses)\n\nCek dari https://kecoakganteng.my.id";
+        $pesan = $domain . " Down (Tidak Dapat Diakses)\n\nCek dari Github";
         $url = "https://api.telegram.org/bot" . $TOKEN . "/sendMessage?chat_id=" . $chatid . "&text=" . urlencode($pesan);
         file_get_contents($url);
         $log .= "[DOWN] $domain\n";
