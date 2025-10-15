@@ -27,6 +27,13 @@ function curlPingWebsite($host)
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'GET',
+
+        // ✅ Tambahkan header di sini
+        CURLOPT_HTTPHEADER => array(
+            'Accept: application/json, text/plain, */*',
+            'Content-Type: application/x-www-form-urlencoded',
+            'User-Agent: Mozilla/5.0 (compatible; DomainMonitorBot/1.0; +https://github.com/celunk/monitor-domain)'
+        ),
     ]);
 
     $response = curl_exec($curl);
