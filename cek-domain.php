@@ -5,6 +5,7 @@ $TOKEN = getenv('TELEGRAM_TOKEN');
 $endPointCurlPing = '/api-cek-server.php';
 
 $arr_domain = [
+    ["https://kecoakganteng.com", "-986829134"],
     ["https://kurir.baraya-paket.com", "-986829134"],
     ["https://baraya-paket.com", "-986829134"],
     ["https://hrd.id", "-986829134"],
