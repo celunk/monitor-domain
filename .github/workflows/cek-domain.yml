@@ -3,11 +3,14 @@ name: Cek Domain Status
 on:
   schedule:
     - cron: "*/5 * * * *" # jalan tiap 5 menit
-  workflow_dispatch: # bisa manual dari tab Actions
+  workflow_dispatch: # bisa dijalankan manual juga
 
 jobs:
   cek-domain:
     runs-on: ubuntu-latest
+
+    env:
+      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}  # 🔥 pindahkan ke sini
 
     steps:
       - name: Checkout repository
@@ -26,6 +29,3 @@ jobs:
         with:
           name: log-cek-domain
           path: log.txt
-
-    env:
-      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
